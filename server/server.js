@@ -68,15 +68,18 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, callback) => {
+
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
-        callback(new Error("CORS blocked"));
+        callback(new Error("Blocked by CORS"));
       }
+
     },
-    credentials: true,
+    credentials: true
   })
 );
+
 
 // ==========================
 // Rate Limiter (AI APIs)

@@ -1,4 +1,4 @@
-import ollama from "../config/ollama.js";
+// import ollama from "../config/ollama.js";
 import { Ollama } from "ollama";
 
 const ollama = new Ollama({

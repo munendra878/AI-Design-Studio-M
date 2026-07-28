@@ -2,7 +2,7 @@
 
 ollama serve &
 
-sleep 10
+sleep 15
 
 ollama pull llama3.2
 

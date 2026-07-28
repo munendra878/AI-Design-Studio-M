@@ -60,10 +60,20 @@ app.use(morgan("dev"));
 // ==========================
 // CORS
 // ==========================
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://ai-design-studio-m-sigma.vercel.app"
+];
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "https://ai-design-studio-m-sigma.vercel.app",
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("CORS blocked"));
+      }
+    },
     credentials: true,
   })
 );

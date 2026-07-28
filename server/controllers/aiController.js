@@ -1,5 +1,9 @@
 import ollama from "../config/ollama.js";
+import { Ollama } from "ollama";
 
+const ollama = new Ollama({
+  host: process.env.OLLAMA_URL
+});
 
 // ==============================
 // Generate Enhanced Prompt

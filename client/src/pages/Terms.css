@@ -1,0 +1,309 @@
+/* ==========================================================
+   TERMS & CONDITIONS PAGE
+========================================================== */
+
+:root{
+  --bg:#0b1120;
+  --surface:#111827;
+  --surface2:#1f2937;
+  --primary:#7c3aed;
+  --primary-light:#8b5cf6;
+  --text:#f8fafc;
+  --text-light:#cbd5e1;
+  --border:#374151;
+  --shadow:0 20px 45px rgba(0,0,0,.35);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,Segoe UI,sans-serif;
+}
+
+/* ==========================
+   PAGE
+========================== */
+
+.terms-page{
+
+  min-height:100vh;
+
+  padding:60px 20px;
+
+  background:
+  radial-gradient(circle at top left,#7c3aed25,transparent 30%),
+  radial-gradient(circle at bottom right,#2563eb20,transparent 35%),
+  linear-gradient(135deg,#020617,#0f172a);
+
+}
+
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.terms-container{
+
+  max-width:950px;
+
+  margin:auto;
+
+  background:rgba(17,24,39,.9);
+
+  backdrop-filter:blur(12px);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:22px;
+
+  padding:45px;
+
+  box-shadow:var(--shadow);
+
+}
+
+
+/* ==========================
+   TITLE
+========================== */
+
+.terms-container h1{
+
+  font-size:42px;
+
+  text-align:center;
+
+  margin-bottom:10px;
+
+  color:#fff;
+
+}
+
+
+.updated{
+
+  text-align:center;
+
+  color:#94a3b8;
+
+  margin-bottom:40px;
+
+  font-size:15px;
+
+}
+
+
+/* ==========================
+   SECTIONS
+========================== */
+
+.terms-container section{
+
+  margin-bottom:35px;
+
+  padding-bottom:25px;
+
+  border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+
+.terms-container section:last-child{
+
+  border-bottom:none;
+
+  margin-bottom:0;
+
+}
+
+
+/* ==========================
+   HEADINGS
+========================== */
+
+.terms-container h2{
+
+  color:#a78bfa;
+
+  margin-bottom:15px;
+
+  font-size:23px;
+
+  font-weight:700;
+
+}
+
+
+/* ==========================
+   PARAGRAPHS
+========================== */
+
+.terms-container p{
+
+  color:var(--text-light);
+
+  line-height:1.9;
+
+  font-size:16px;
+
+  margin-bottom:14px;
+
+}
+
+
+/* ==========================
+   LISTS
+========================== */
+
+.terms-container ul{
+
+  margin-left:25px;
+
+  margin-top:12px;
+
+}
+
+
+.terms-container li{
+
+  color:var(--text-light);
+
+  margin-bottom:12px;
+
+  line-height:1.8;
+
+}
+
+
+/* ==========================
+   LINKS
+========================== */
+
+.terms-container a{
+
+  color:#60a5fa;
+
+  text-decoration:none;
+
+  transition:.3s;
+
+}
+
+
+.terms-container a:hover{
+
+  color:#93c5fd;
+
+  text-decoration:underline;
+
+}
+
+
+/* ==========================
+   CONTACT
+========================== */
+
+.terms-container section:last-child p{
+
+  font-weight:500;
+
+}
+
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+  width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+  background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+  background:#7c3aed;
+
+  border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+  background:#8b5cf6;
+
+}
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+  .terms-page{
+
+    padding:30px 15px;
+
+  }
+
+  .terms-container{
+
+    padding:28px;
+
+  }
+
+  .terms-container h1{
+
+    font-size:30px;
+
+  }
+
+  .terms-container h2{
+
+    font-size:20px;
+
+  }
+
+  .terms-container p,
+  .terms-container li{
+
+    font-size:15px;
+
+  }
+
+}
+
+@media(max-width:480px){
+
+  .terms-container{
+
+    padding:22px;
+
+  }
+
+  .terms-container h1{
+
+    font-size:26px;
+
+  }
+
+  .terms-container h2{
+
+    font-size:18px;
+
+  }
+
+}

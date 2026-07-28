@@ -1,0 +1,418 @@
+/* ==============================
+   MY DESIGNS PAGE
+============================== */
+
+.my-designs-page{
+
+    min-height:100vh;
+
+    padding:40px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #020617,
+        #111827
+    );
+
+    color:white;
+
+}
+
+
+
+/* HEADER */
+
+.design-header{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+
+.design-header h1{
+
+    font-size:40px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+/* GRID */
+
+.design-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(
+        auto-fit,
+        minmax(300px,1fr)
+    );
+
+    gap:30px;
+
+}
+
+
+
+
+/* CARD */
+
+.design-card{
+
+    background:#111827;
+
+    border:1px solid #374151;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+
+
+.design-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.35);
+
+}
+
+
+
+
+/* IMAGE CONTAINER */
+.image-wrapper{
+
+    width:100%;
+
+    aspect-ratio:3 / 4;
+
+    background:#020617;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+/* IMAGE */
+.design-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+}
+
+/* INFO */
+
+.design-info{
+
+    padding:20px;
+
+}
+
+
+
+.design-info h3{
+
+    margin:0 0 10px;
+
+    font-size:22px;
+
+}
+
+
+
+.design-info span{
+
+    color:#94a3b8;
+
+    font-size:14px;
+
+}
+
+
+
+
+/* PROMPT */
+
+.design-prompt{
+
+    margin-top:15px;
+
+    color:#e5e7eb;
+
+    line-height:1.5;
+
+    font-size:14px;
+
+}
+
+
+
+/* DETAILS */
+
+.saved-details{
+
+    margin-top:15px;
+
+    padding:12px;
+
+    background:#1f2937;
+
+    border-radius:12px;
+
+}
+
+
+.saved-details p{
+
+    margin:5px 0;
+
+    font-size:14px;
+
+}
+
+
+
+/* BUTTONS */
+
+.design-actions{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+
+
+.download-btn,
+.delete-btn{
+
+
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+}
+
+
+
+.download-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+
+
+.delete-btn{
+
+    background:#dc2626;
+
+    color:white;
+
+}
+
+/* ==========================
+   Loading Screen
+========================== */
+
+.loading-screen{
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    animation:fadeIn .6s ease;
+}
+
+/* ==========================
+   Spinner
+========================== */
+
+.loader{
+
+    width:70px;
+    height:70px;
+
+    border:6px solid rgba(237, 124, 58, 0.15);
+    border-top:6px solid #7c3aed;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+    margin-bottom:25px;
+
+}
+
+/* ==========================
+   Heading
+========================== */
+
+.loading-screen h2{
+
+    font-size:2rem;
+    font-weight:700;
+
+    color:var(--text);
+
+    margin-bottom:12px;
+
+    animation:float 2s ease-in-out infinite;
+
+}
+
+/* ==========================
+   Subtitle
+========================== */
+
+.loading-screen p{
+
+    color:#94a3b8;
+
+    font-size:16px;
+
+}
+
+/* ==========================
+   Animated Dots
+========================== */
+
+.loading-dots{
+
+    display:flex;
+
+    gap:8px;
+
+    margin-bottom:20px;
+
+}
+
+.loading-dots span{
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:#5c4388;
+
+    animation:bounce 1.2s infinite;
+
+}
+
+.loading-dots span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.loading-dots span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+/* ==========================
+   Animations
+========================== */
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes bounce{
+
+    0%,80%,100%{
+        transform:scale(.5);
+        opacity:.5;
+    }
+
+    40%{
+        transform:scale(1.2);
+        opacity:1;
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+}

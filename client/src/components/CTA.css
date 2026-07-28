@@ -1,0 +1,235 @@
+/* ==========================
+   CTA SECTION
+========================== */
+
+.cta-section{
+
+    padding:90px 8%;
+
+    background:var(--bg);
+
+}
+
+.cta-box{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:70px 40px;
+
+    border-radius:28px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #7c3aed,
+    #4f46e5
+    );
+
+    color:#fff;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 20px 45px rgba(124,58,237,.35);
+
+}
+
+/* Decorative Circles */
+
+.cta-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    top:-70px;
+    left:-70px;
+
+}
+
+.cta-box::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    bottom:-60px;
+    right:-60px;
+
+}
+
+/* Heading */
+
+.cta-box h2{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:2.8rem;
+
+    margin-bottom:20px;
+
+}
+
+/* Description */
+
+.cta-box p{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:720px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+    font-size:17px;
+
+    opacity:.95;
+
+}
+
+/* Button */
+
+.cta-btn{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:35px;
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#fff;
+
+    color:#7c3aed;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.cta-btn:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.05);
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.25);
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:992px){
+
+.cta-box{
+
+    padding:55px 30px;
+
+}
+
+.cta-box h2{
+
+    font-size:2.2rem;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.cta-section{
+
+    padding:60px 20px;
+
+}
+
+.cta-box{
+
+    padding:45px 25px;
+
+}
+
+.cta-box h2{
+
+    font-size:1.9rem;
+
+}
+
+.cta-box p{
+
+    font-size:15px;
+
+}
+
+.cta-btn{
+
+    width:100%;
+
+    padding:15px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.cta-box h2{
+
+    font-size:1.6rem;
+
+}
+
+.cta-box{
+
+    border-radius:20px;
+
+}
+
+}
+
+.cta{
+background:
+linear-gradient(
+135deg,
+#aa87e8,
+#c21c6f
+);
+}

@@ -1,0 +1,1214 @@
+/* ===========================================
+   AI DESIGN STUDIO DASHBOARD
+   Professional Responsive Dashboard
+=========================================== */
+
+:root{
+    --bg:#0b1220;
+    --surface:#111827;
+    --surface-2:#1f2937;
+    --card:#182334;
+
+    --primary:#6366f1;
+    --primary-dark:#4f46e5;
+
+    --success:#22c55e;
+    --warning:#f59e0b;
+    --danger:#ef4444;
+    --info:#3b82f6;
+
+    --text:#ffffff;
+    --text-light:#d1d5db;
+    --text-muted:#94a3b8;
+
+    --border:rgba(255,255,255,.08);
+
+    --shadow:
+    0 15px 35px rgba(0,0,0,.35);
+
+    --radius:18px;
+}
+
+/* ===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+    Inter,
+    sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* ===================================== */
+
+.dashboard{
+
+    min-height:100vh;
+
+    display:flex;
+
+    background:
+    linear-gradient(
+    180deg,
+    #0b1220,
+    #101827
+    );
+
+}
+
+/* ===================================== */
+
+.dashboard-main{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-width:0;
+
+}
+
+/* ===================================== */
+
+.dashboard-body{
+
+    flex:1;
+
+    padding:30px;
+
+}
+
+/* ===================================== */
+
+.dashboard-content{
+
+    width:100%;
+
+    max-width:1450px;
+
+    margin:auto;
+
+}
+
+/* ===================================== */
+
+.dashboard-header{
+
+    margin-bottom:30px;
+
+}
+
+/* ===================================== */
+
+.welcome-card{
+
+    background:
+    linear-gradient(
+    135deg,
+    #6366f1,
+    #7c3aed
+    );
+
+    border-radius:24px;
+
+    padding:45px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:
+    var(--shadow);
+
+}
+
+/* Decorative */
+
+.welcome-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    right:-80px;
+
+    top:-80px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,.08);
+
+}
+
+.welcome-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    left:-60px;
+
+    bottom:-60px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,.05);
+
+}
+
+/* ===================================== */
+
+.welcome-text{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:700px;
+
+}
+
+.welcome-text h1{
+
+    font-size:2.3rem;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+    line-height:1.2;
+
+}
+
+.welcome-text p{
+
+    font-size:1.05rem;
+
+    color:#eef2ff;
+
+    line-height:1.8;
+
+    margin-bottom:28px;
+
+}
+
+/* ===================================== */
+
+.create-ai-btn{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:15px 30px;
+
+    border-radius:14px;
+
+    background:white;
+
+    color:#4f46e5;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.create-ai-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 12px 25px
+    rgba(0,0,0,.25);
+
+}
+
+/* ===================================== */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+
+/* ===================================== */
+
+.stat-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:
+    rgba(99,102,241,.45);
+
+}
+
+/* ===================================== */
+
+.icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.icon svg{
+
+    color:white;
+
+}
+
+.icon.purple{
+
+    background:#6366f1;
+
+}
+
+.icon.green{
+
+    background:#22c55e;
+
+}
+
+.icon.orange{
+
+    background:#f59e0b;
+
+}
+
+.icon.blue{
+
+    background:#3b82f6;
+
+}
+
+.stat-card h2{
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+.stat-card p{
+
+    color:var(--text-muted);
+
+    font-size:15px;
+
+}
+
+/* ===========================================
+   TABLE CARD
+=========================================== */
+
+.table-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:30px;
+
+}
+
+/* ===================================== */
+
+.card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:22px 28px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.card-header h2{
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.card-header a{
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.card-header a:hover{
+
+    color:white;
+
+}
+
+/* ===================================== */
+
+.table-responsive{
+
+    width:100%;
+
+    overflow-x:auto;
+
+}
+
+/* ===================================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:700px;
+
+}
+
+/* ===================================== */
+
+thead{
+
+    background:#162132;
+
+}
+
+thead th{
+
+    color:#fff;
+
+    text-align:left;
+
+    padding:18px 22px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+/* ===================================== */
+
+tbody tr{
+
+    transition:.3s;
+
+}
+
+tbody tr:hover{
+
+    background:rgba(255,255,255,.03);
+
+}
+
+tbody td{
+
+    padding:18px 22px;
+
+    color:var(--text-light);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+/* ===================================== */
+
+.status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    background:#22c55e22;
+
+    color:#22c55e;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+/* ===========================================
+   LOADING
+=========================================== */
+
+.dashboard-loading{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:var(--bg);
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+.loading-state{
+
+    padding:60px;
+
+    text-align:center;
+
+    color:var(--text-muted);
+
+    font-size:18px;
+
+}
+
+/* ===========================================
+   EMPTY STATE
+=========================================== */
+
+.empty-state{
+
+    padding:60px 30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.empty-state svg{
+
+    width:70px;
+
+    height:70px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.empty-state h3{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+.empty-state p{
+
+    color:var(--text-muted);
+
+    margin-bottom:30px;
+
+    max-width:500px;
+
+    line-height:1.7;
+
+}
+
+/* ===========================================
+   BUTTONS
+=========================================== */
+
+button{
+
+    font-family:inherit;
+
+}
+
+.create-ai-btn{
+
+    transition:.3s;
+
+}
+
+.create-ai-btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.create-ai-btn:active{
+
+    transform:scale(.97);
+
+}
+
+/* ===========================================
+   LINKS
+=========================================== */
+
+a{
+
+    text-decoration:none;
+
+}
+
+/* ===========================================
+   SCROLLBAR
+=========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+    height:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#374151;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#4b5563;
+
+}
+
+/* ===========================================
+   FOOTER
+=========================================== */
+
+footer{
+
+    margin-top:auto;
+
+}
+
+/* ===========================================
+   ANIMATIONS
+=========================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.dashboard-content{
+
+    animation:fadeUp .5s ease;
+
+}
+
+.stat-card{
+
+    animation:fadeUp .6s ease;
+
+}
+
+.table-card{
+
+    animation:fadeUp .7s ease;
+
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+=========================================== */
+
+/* ===========================
+   Large Desktop (1400px)
+=========================== */
+
+@media (max-width:1400px){
+
+.dashboard-body{
+    padding:25px;
+}
+
+.dashboard-content{
+    max-width:1200px;
+}
+
+.stats-grid{
+    gap:20px;
+}
+
+}
+
+/* ===========================
+   Laptop (1200px)
+=========================== */
+
+@media (max-width:1200px){
+
+.stats-grid{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+}
+
+.welcome-card{
+
+    padding:35px;
+
+}
+
+.welcome-text h1{
+
+    font-size:2rem;
+
+}
+
+}
+
+/* ===========================
+   Tablet (992px)
+=========================== */
+
+@media (max-width:992px){
+
+.dashboard-body{
+
+    padding:20px;
+
+}
+
+.welcome-card{
+
+    padding:30px;
+
+}
+
+.welcome-text{
+
+    text-align:center;
+
+    margin:auto;
+
+}
+
+.welcome-text h1{
+
+    font-size:1.9rem;
+
+}
+
+.welcome-text p{
+
+    font-size:15px;
+
+}
+
+.card-header{
+
+    flex-direction:column;
+
+    gap:10px;
+
+    align-items:flex-start;
+
+}
+
+}
+
+/* ===========================
+   Tablet Small (768px)
+=========================== */
+
+@media (max-width:768px){
+
+.dashboard-body{
+
+    padding:15px;
+
+}
+
+.dashboard-header{
+
+    margin-bottom:20px;
+
+}
+
+.welcome-card{
+
+    padding:25px 20px;
+
+    border-radius:18px;
+
+}
+
+.welcome-card::before,
+.welcome-card::after{
+
+    display:none;
+
+}
+
+.welcome-text h1{
+
+    font-size:1.6rem;
+
+}
+
+.welcome-text p{
+
+    font-size:14px;
+
+    line-height:1.6;
+
+}
+
+.create-ai-btn{
+
+    width:100%;
+
+    padding:14px;
+
+    font-size:15px;
+
+}
+
+.stats-grid{
+
+    grid-template-columns:1fr;
+
+    gap:15px;
+
+}
+
+.stat-card{
+
+    padding:22px;
+
+}
+
+.stat-card h2{
+
+    font-size:28px;
+
+}
+
+.icon{
+
+    width:55px;
+
+    height:55px;
+
+}
+
+.table-card{
+
+    border-radius:16px;
+
+}
+
+.card-header{
+
+    padding:18px;
+
+}
+
+.card-header h2{
+
+    font-size:20px;
+
+}
+
+.table-responsive{
+
+    overflow-x:auto;
+
+}
+
+table{
+
+    min-width:650px;
+
+}
+
+thead th,
+tbody td{
+
+    padding:14px;
+
+    font-size:14px;
+
+}
+
+.empty-state{
+
+    padding:40px 20px;
+
+}
+
+.empty-state h3{
+
+    font-size:22px;
+
+}
+
+.empty-state p{
+
+    font-size:14px;
+
+}
+
+}
+
+/* ===========================
+   Mobile (576px)
+=========================== */
+
+@media (max-width:576px){
+
+.dashboard-body{
+
+    padding:12px;
+
+}
+
+.welcome-card{
+
+    padding:20px 16px;
+
+}
+
+.welcome-text h1{
+
+    font-size:1.4rem;
+
+}
+
+.welcome-text p{
+
+    font-size:13px;
+
+}
+
+.create-ai-btn{
+
+    font-size:14px;
+
+    padding:13px;
+
+}
+
+.stat-card{
+
+    padding:18px;
+
+}
+
+.stat-card h2{
+
+    font-size:24px;
+
+}
+
+.stat-card p{
+
+    font-size:13px;
+
+}
+
+.icon{
+
+    width:48px;
+
+    height:48px;
+
+}
+
+.icon svg{
+
+    width:20px;
+
+    height:20px;
+
+}
+
+.card-header{
+
+    padding:16px;
+
+}
+
+.card-header h2{
+
+    font-size:18px;
+
+}
+
+.loading-state{
+
+    padding:40px 20px;
+
+    font-size:16px;
+
+}
+
+}
+
+/* ===========================
+   Small Mobile (400px)
+=========================== */
+
+@media (max-width:400px){
+
+.dashboard-body{
+
+    padding:10px;
+
+}
+
+.welcome-text h1{
+
+    font-size:1.25rem;
+
+}
+
+.welcome-text p{
+
+    font-size:12px;
+
+}
+
+.create-ai-btn{
+
+    font-size:13px;
+
+    padding:12px;
+
+}
+
+.stat-card{
+
+    padding:16px;
+
+}
+
+.stat-card h2{
+
+    font-size:22px;
+
+}
+
+.icon{
+
+    width:44px;
+
+    height:44px;
+
+}
+
+.icon svg{
+
+    width:18px;
+
+    height:18px;
+
+}
+
+.card-header h2{
+
+    font-size:17px;
+
+}
+
+thead th,
+tbody td{
+
+    padding:12px;
+
+    font-size:13px;
+
+}
+
+}
+
+/* ===========================
+   Landscape Phones
+=========================== */
+
+@media (max-height:600px){
+
+.dashboard-body{
+
+    padding-top:15px;
+
+}
+
+.welcome-card{
+
+    padding:20px;
+
+}
+
+}
+
+/* ===========================
+   Reduced Motion
+=========================== */
+
+@media (prefers-reduced-motion:reduce){
+
+*{
+
+    animation:none !important;
+
+    transition:none !important;
+
+    scroll-behavior:auto !important;
+
+}
+
+}
+
+.dashboard-main{
+    margin-left:270px;
+    width:calc(100% - 270px);
+    min-height:100vh;
+    transition:.3s;
+}
+
+.dashboard-body{
+    padding:30px;
+}
+
+@media (max-width:768px){
+
+.dashboard-main{
+
+    margin-left:0;
+
+    width:100%;
+
+}
+
+}
+
+
+.dashboard-main{
+    margin-left:270px;
+    width:calc(100% - 270px);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+@media (max-width:768px){
+    .dashboard-main{
+        margin-left:0;
+        width:100%;
+    }
+}

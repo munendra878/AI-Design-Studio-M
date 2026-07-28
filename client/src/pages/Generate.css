@@ -1,0 +1,1091 @@
+/* =====================================================
+   AI GENERATOR PAGE - PROFESSIONAL DARK UI
+   PART 1 - BASE, LAYOUT & CARDS
+===================================================== */
+
+/* ================= ROOT VARIABLES ================= */
+
+:root{
+
+    --bg-dark:#090d16;
+    --bg-surface:#111827;
+    --bg-surface-light:#1f2937;
+
+    --border:#374151;
+    --border-hover:#4b5563;
+
+    --text:#f9fafb;
+    --text-secondary:#9ca3af;
+
+    --primary:#6366f1;
+    --primary-dark:#4f46e5;
+
+    --success:#16a34a;
+    --warning:#d97706;
+    --purple:#7c3aed;
+
+    --radius:18px;
+
+    --shadow:
+        0 12px 40px rgba(0,0,0,.35);
+
+    --transition:.25s ease;
+
+}
+
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background:var(--bg-dark);
+    color:var(--text);
+
+    -webkit-font-smoothing:antialiased;
+}
+
+
+/* ================= PAGE ================= */
+
+.generate-page{
+
+    width:100%;
+    min-height:100vh;
+
+    background:
+        radial-gradient(circle at top left,
+        rgba(99,102,241,.12),
+        transparent 30%),
+
+        radial-gradient(circle at bottom right,
+        rgba(124,58,237,.10),
+        transparent 35%),
+
+        var(--bg-dark);
+
+    padding:40px 20px 60px;
+
+}
+
+
+/* ================= HEADER ================= */
+
+.generate-header{
+
+    max-width:900px;
+
+    margin:0 auto 45px;
+
+    text-align:center;
+
+}
+
+.generate-header h1{
+
+    font-size:46px;
+    font-weight:800;
+
+    line-height:1.2;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c4b5fd,
+            #818cf8
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    margin-bottom:15px;
+
+}
+
+.generate-header p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:var(--text-secondary);
+
+    font-size:17px;
+
+    line-height:1.7;
+
+}
+
+
+/* ================= MAIN CONTENT ================= */
+
+.generate-content{
+
+    width:100%;
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:26px;
+
+}
+
+
+/* ================= CARD ================= */
+
+.card-preview{
+    position:relative;
+    width:100%;
+    max-width:700px;
+    margin:auto;
+}
+
+.generated-image{
+    display:block;
+    width:100%;
+    height:auto;
+    border-radius:12px;
+}
+
+.card-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    pointer-events:none;
+}
+.generate-card:hover{
+
+    border-color:var(--border-hover);
+
+    transform:translateY(-2px);
+
+}
+
+.header-nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.header-nav h1{
+    margin:0;
+    color:#fff;
+}
+
+.logout-btn{
+    padding:8px 16px;
+    background:#222223;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:600;
+}
+
+.logout-btn:hover{
+    background:#dc2626;
+}
+/* ================= SECTION TITLE ================= */
+
+.section-title{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:22px;
+
+    color:white;
+
+}
+
+
+/* ================= BUTTON AREA ================= */
+
+.generate-button-area{
+
+    width:100%;
+
+}
+
+.generate-button-area button{
+
+    width:100%;
+
+}
+
+
+/* ================= COMMON SPACING ================= */
+
+.form-group{
+
+    margin-bottom:22px;
+
+}
+
+.form-row{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+
+}
+
+.full-width{
+
+    grid-column:1/-1;
+
+}
+
+
+/* ================= DIVIDER ================= */
+
+.divider{
+
+    height:1px;
+
+    width:100%;
+
+    background:#273244;
+
+    margin:24px 0;
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+.generate-page{
+
+    padding:20px;
+
+}
+
+.generate-header h1{
+
+    font-size:34px;
+
+}
+
+.generate-header p{
+
+    font-size:15px;
+
+}
+
+.form-row{
+
+    grid-template-columns:1fr;
+
+}
+
+.generate-card{
+
+    padding:20px;
+
+}
+
+}
+
+/* =====================================================
+   AI GENERATOR PAGE
+   PART 2 - FORMS, INPUTS & PROMPT PREVIEW
+===================================================== */
+
+
+/* ================= FORM GROUP ================= */
+
+.form-group{
+    margin-bottom:22px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-size:14px;
+    font-weight:600;
+    color:#d1d5db;
+}
+
+
+/* ================= INPUTS ================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+    background:#1f2937;
+
+    color:#f9fafb;
+
+    font-size:15px;
+
+    font-family:inherit;
+
+    outline:none;
+
+    transition:all .25s ease;
+
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder{
+
+    color:#6b7280;
+
+}
+
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover{
+
+    border-color:#4b5563;
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+    border-color:#6366f1;
+
+    box-shadow:
+    0 0 0 3px rgba(99,102,241,.25);
+
+}
+
+
+/* ================= TEXTAREA ================= */
+
+.form-group textarea{
+
+    min-height:140px;
+
+    resize:vertical;
+
+    line-height:1.6;
+
+}
+
+
+/* ================= SELECT ================= */
+
+.form-group select{
+
+    appearance:none;
+
+    cursor:pointer;
+
+    padding-right:45px;
+
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%239ca3af' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+
+    background-repeat:no-repeat;
+
+    background-position:right 15px center;
+
+}
+
+
+.form-group option{
+
+    background:#111827;
+
+    color:white;
+
+}
+
+
+/* ================= CATEGORY AREA ================= */
+
+.category-selector{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+
+    gap:15px;
+
+}
+
+.category-card {
+    padding: 10px 10px;
+    min-height: 130px;
+    border-radius: 12px;
+    background: #161616;
+    border: 1px solid #475266;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    border-color: #8989b0;
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+}
+
+.category-card.active {
+    background: linear-gradient(
+        135deg,
+        #30317d,
+        #220b4a
+    );
+    border-color: #44a0d2;
+    color: #fff;
+}
+/* ================= PROMPT PREVIEW ================= */
+
+.prompt-preview{
+
+    margin-top:15px;
+
+    border-radius:14px;
+
+    background:#1f2937;
+
+    border:1px solid #374151;
+
+    padding:22px;
+
+}
+
+
+/* ================= GENERATED PROMPT ================= */
+
+.generated-textarea{
+
+    width:100%;
+
+    min-height:180px;
+
+    padding:16px;
+
+    border-radius:12px;
+
+    border:1px solid #374151;
+
+    background:#090d16;
+
+    color:#f3f4f6;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    resize:vertical;
+
+    outline:none;
+
+}
+
+
+.generated-textarea:focus{
+
+    border-color:#6366f1;
+
+}
+
+
+/* ================= PROMPT ACTIONS ================= */
+
+.prompt-actions{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:12px;
+
+    margin-top:18px;
+
+}
+
+
+.prompt-actions button{
+
+    padding:10px 18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:#6366f1;
+
+    color:white;
+
+    transition:.25s;
+
+}
+
+
+.prompt-actions button:hover{
+
+    background:#4f46e5;
+
+}
+
+
+/* ================= LOADING TEXT ================= */
+
+.loading-text{
+
+    color:#9ca3af;
+
+    font-size:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+.category-selector{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+.prompt-actions{
+
+    flex-direction:column;
+
+}
+
+.prompt-actions button{
+
+    width:100%;
+
+}
+
+.generated-textarea{
+
+    min-height:150px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.category-selector{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+/* =====================================================
+   AI GENERATOR PAGE
+   PART 3 - IMAGE PREVIEW, BUTTONS & RESPONSIVE
+===================================================== */
+
+
+/* ================= IMAGE PREVIEW ================= */
+
+.preview-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    gap:15px;
+}
+
+.image-preview{
+    width:100%;
+    min-height:550px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#0f172a;
+
+    border:2px dashed #374151;
+    border-radius:18px;
+
+    overflow:hidden;
+
+    padding:20px;
+}
+
+
+.image-preview:hover{
+
+    border-color:#6366f1;
+
+}
+
+
+/* ================= GENERATED IMAGE ================= */
+
+.image-preview img{
+
+    display:block;
+
+    max-width:100%;
+    max-height:500px;
+
+    width:auto;
+    height:auto;
+
+    object-fit:contain;
+
+    border-radius:12px;
+}
+
+/* ================= EMPTY STATE ================= */
+
+.empty-image,
+.image-loading{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    color:#9ca3af;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.empty-image svg,
+.image-loading svg{
+
+    opacity:.7;
+
+}
+
+
+/* ================= IMAGE BUTTONS ================= */
+
+.image-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:24px;
+
+    flex-wrap:wrap;
+
+}
+
+.image-buttons button{
+
+    flex:1;
+
+    min-width:170px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    transition:.25s ease;
+
+}
+
+
+/* Download */
+
+.download-btn{
+
+    background:#16a34a;
+
+}
+
+.download-btn:hover{
+
+    background:#15803d;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* Regenerate */
+
+.regen-btn{
+
+    background:#d97706;
+
+}
+
+.regen-btn:hover{
+
+    background:#b45309;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* Save */
+
+.save-btn{
+
+    background:#7c3aed;
+
+}
+
+.save-btn:hover{
+
+    background:#6d28d9;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* Disabled */
+
+.image-buttons button:disabled{
+
+    opacity:.55;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+
+/* ================= GENERATE BUTTON ================= */
+
+.generate-btn,
+.generate-image-btn{
+
+    width:100%;
+
+    height:54px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+        135deg,
+        #6366f1,
+        #4f46e5
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+}
+
+.generate-btn:hover,
+.generate-image-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(99,102,241,.35);
+
+}
+
+.generate-btn:disabled,
+.generate-image-btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+
+/* ================= LOADER ================= */
+
+.loader{
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    border:4px solid #374151;
+
+    border-top-color:#6366f1;
+
+    animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#374151;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#4b5563;
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:992px){
+
+.image-preview{
+
+    min-height:420px;
+
+}
+
+}
+
+
+@media (max-width:768px){
+
+.image-preview{
+
+    min-height:350px;
+
+}
+
+.image-buttons{
+
+    flex-direction:column;
+
+}
+
+.image-buttons button{
+
+    width:100%;
+    min-width:100%;
+
+}
+
+.preview-top{
+
+    flex-direction:column;
+    align-items:flex-start;
+
+}
+
+}
+
+
+@media (max-width:480px){
+
+.image-preview{
+
+    min-height:280px;
+
+}
+
+.generate-btn,
+.generate-image-btn{
+
+    font-size:15px;
+
+}
+
+}
+
+/* ===================================
+   PAGE HEADER
+=================================== */
+
+.generate-header{
+    width:100%;
+    padding:90px 20px 40px;
+    display:flex;
+    justify-content:center;
+}
+
+.generate-header-content{
+    width:100%;
+    max-width:1200px;
+    text-align:center;
+
+    padding:40px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.generate-title{
+    margin:0;
+    color:#ffffff;
+    font-size:48px;
+    font-weight:700;
+}
+
+.generate-subtitle{
+    margin-top:15px;
+    color:#cbd5e1;
+    font-size:18px;
+    line-height:1.7;
+    max-width:700px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* Tablet */
+
+@media (max-width:768px){
+
+.generate-header{
+    padding:80px 15px 30px;
+}
+
+.generate-header-content{
+    padding:30px 20px;
+}
+
+.generate-title{
+    font-size:34px;
+}
+
+.generate-subtitle{
+    font-size:16px;
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:480px){
+
+.generate-title{
+    font-size:28px;
+}
+
+.generate-subtitle{
+    font-size:14px;
+}
+
+}

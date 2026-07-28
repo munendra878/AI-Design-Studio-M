@@ -1,0 +1,92 @@
+/* ==========================
+   Reset
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body,
+#root{
+    width:100%;
+    min-height:100vh;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+/* ==========================
+   Theme Variables
+========================== */
+
+:root{
+
+    --bg:#ffffff;
+    --bg-gradient:
+        radial-gradient(circle at top left,#7c3aed15 0%,transparent 35%),
+        radial-gradient(circle at bottom right,#2563eb15 0%,transparent 35%);
+
+    --text:#111827;
+    --card:#ffffff;
+    --navbar:#ffffff;
+
+    --primary:#7c3aed;
+}
+
+[data-theme="dark"]{
+
+    --bg:#0b1120;
+    --bg-gradient:
+        radial-gradient(circle at top left,#7c3aed22 0%,transparent 35%),
+        radial-gradient(circle at bottom right,#2563eb22 0%,transparent 35%);
+
+    --text:#ffffff;
+    --card:#111827;
+    --navbar:#111827;
+
+    --primary:#8b5cf6;
+}
+
+/* ==========================
+   Body
+========================== */
+
+body{
+
+    font-family:Inter,Arial,sans-serif;
+
+    background:
+        var(--bg-gradient),
+        var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    transition:
+        background .35s ease,
+        color .35s ease;
+
+}
+
+#root{
+    width:100%;
+    max-width:none;
+    margin:0;
+    padding:0;
+    display:block;
+}

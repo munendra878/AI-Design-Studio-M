@@ -1,0 +1,483 @@
+/* =====================================================
+   FOOTER - AI DESIGN STUDIO
+===================================================== */
+
+.footer{
+    width:100%;
+    margin-top:60px;
+    padding:25px;
+}
+
+.footer-container{
+    max-width:1350px;
+    margin:0 auto;
+
+    padding:45px;
+
+    border-radius:24px;
+
+    background:rgba(20,28,45,.72);
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.30),
+        inset 0 1px rgba(255,255,255,.08);
+}
+
+/* =====================================================
+   TOP SECTION
+===================================================== */
+
+.footer-top{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:55px;
+
+    margin-bottom:35px;
+
+}
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.footer-brand h2{
+
+    color:#ffffff;
+
+    font-size:32px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.footer-brand p{
+
+    color:#cbd5e1;
+
+    line-height:1.9;
+
+    font-size:16px;
+
+    max-width:480px;
+
+}
+
+/* =====================================================
+   LINKS
+===================================================== */
+
+.footer-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.footer-links h3{
+
+    color:#ffffff;
+
+    margin-bottom:18px;
+
+    font-size:19px;
+
+}
+
+.footer-links a{
+
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+
+    font-size:15px;
+
+}
+
+.footer-links a:hover{
+
+    color:#8b5cf6;
+
+    transform:translateX(6px);
+
+}
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.footer-divider{
+
+    width:100%;
+
+    height:1px;
+
+    margin:30px 0;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+/* =====================================================
+   BOTTOM
+===================================================== */
+
+.footer-bottom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+/* =====================================================
+   COPYRIGHT
+===================================================== */
+
+.footer-copy{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.footer-copy h4{
+
+    margin:0;
+
+    color:#ffffff;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+.footer-copy p{
+
+    margin:0;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#94a3b8;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+}
+
+.footer-heart{
+
+    color:#ec4899;
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.15);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.footer-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+/* =====================================================
+   EMAIL
+===================================================== */
+
+.footer-icon{
+
+    width:46px;
+
+    height:46px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    text-decoration:none;
+
+    color:#ffffff;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    transition:.3s;
+
+}
+
+.footer-icon:hover{
+
+    background:#7c3aed;
+
+    transform:translateY(-4px);
+
+}
+
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+
+.back-top{
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#ffffff;
+
+    background:linear-gradient(
+        135deg,
+        #7c3aed,
+        #9333ea
+    );
+
+    box-shadow:
+        0 12px 25px rgba(124,58,237,.35);
+
+    transition:.35s;
+
+}
+
+.back-top:hover{
+
+    transform:translateY(-5px);
+
+    background:linear-gradient(
+        135deg,
+        #9333ea,
+        #ec4899
+    );
+
+}
+
+.back-top:active{
+
+    transform:scale(.95);
+
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:992px){
+
+.footer-top{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+.footer-brand{
+
+grid-column:1/-1;
+
+}
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:768px){
+
+.footer{
+
+padding:18px;
+
+}
+
+.footer-container{
+
+padding:30px 25px;
+
+}
+
+.footer-top{
+
+grid-template-columns:1fr;
+
+gap:35px;
+
+}
+
+.footer-brand h2{
+
+font-size:28px;
+
+}
+
+.footer-brand p{
+
+font-size:15px;
+
+}
+
+.footer-bottom{
+
+flex-direction:column;
+
+text-align:center;
+
+justify-content:center;
+
+}
+
+.footer-copy{
+
+align-items:center;
+
+}
+
+.footer-copy p{
+
+justify-content:center;
+
+}
+
+.footer-actions{
+
+justify-content:center;
+
+width:100%;
+
+}
+
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:480px){
+
+.footer{
+
+padding:12px;
+
+}
+
+.footer-container{
+
+padding:22px 18px;
+
+border-radius:18px;
+
+}
+
+.footer-brand h2{
+
+font-size:24px;
+
+}
+
+.footer-brand p{
+
+font-size:14px;
+
+}
+
+.footer-links h3{
+
+font-size:17px;
+
+}
+
+.footer-links a{
+
+font-size:14px;
+
+}
+
+.footer-copy h4{
+
+font-size:16px;
+
+}
+
+.footer-copy p{
+
+font-size:13px;
+
+}
+
+.footer-icon,
+.back-top{
+
+width:42px;
+
+height:42px;
+
+}
+
+}

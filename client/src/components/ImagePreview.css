@@ -1,0 +1,1191 @@
+/* ===============================
+   IMAGE PREVIEW CONTAINER
+================================ */
+
+.image-preview{
+    width:100%;
+    margin-top:30px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+
+/* ===============================
+   HEADER
+================================ */
+
+.preview-top{
+    width:100%;
+    margin-bottom:20px;
+}
+
+.preview-top h2{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:white;
+}
+
+
+
+/* ===============================
+   IMAGE CARD
+================================ */
+
+.card-preview{
+
+    position:relative;
+
+      width: 100%;
+    max-width: 700px;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    background:#f1f0ed;
+
+    box-shadow:
+    0 20px 50px rgba(243, 25, 36, 0.5);
+
+}
+
+
+
+.generated-image{
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 700px;
+
+    object-fit: contain;   /* instead of cover */
+
+    border-radius: 20px;
+    background: transparent;
+}
+
+
+
+/* ===============================
+   TEXT OVERLAY
+================================ */
+
+
+.card-overlay{
+
+    position:absolute;
+
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    pointer-events:none;
+
+}
+
+.overlay-content{
+
+    width:85%;
+
+    text-align:center;
+
+    color:#fff;
+
+    text-shadow:
+        0 3px 10px rgba(0,0,0,.8);
+
+}
+
+
+/* ===============================
+   BUTTONS
+================================ */
+
+.image-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 30px;
+    padding: 20px;
+
+    width: 100%;
+
+    position: relative;
+    z-index: 9999;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+
+.image-buttons button {
+
+    display: flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-width: 130px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+}
+
+
+.download-btn {
+    background: #2563eb !important;
+}
+
+
+.regen-btn {
+    background: #7c3aed !important;
+}
+
+
+.save-btn {
+    background: #059669 !important;
+}
+
+
+
+.image-buttons button{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    padding:12px 22px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+
+/* Download */
+
+.download-btn{
+
+    background:#2563eb;
+
+}
+
+
+.download-btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+
+
+/* Regenerate */
+
+.regen-btn{
+
+    background:#7c3aed;
+
+}
+
+
+.regen-btn:hover{
+
+    background:#6d28d9;
+
+}
+
+
+
+/* Save */
+
+.save-btn{
+
+    background:#059669;
+
+}
+
+
+.save-btn:hover{
+
+    background:#047857;
+
+}
+
+
+
+
+/* ===============================
+   LOADING
+================================ */
+
+
+.image-loading{
+
+    height:400px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+}
+
+
+.loader{
+
+    width:45px;
+    height:45px;
+
+    border:5px solid #ffffff40;
+
+    border-top-color:white;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+
+@keyframes spin{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+
+
+/* ===============================
+ EMPTY STATE
+================================ */
+
+
+.empty-image{
+
+    height:400px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#aaa;
+
+}
+
+.generated-image{
+    display:block;
+    width:100%;
+    min-height:900px;
+    object-fit:cover;
+    border-radius:20px;
+    background:#222;
+}
+/* ==========================
+   VALENTINE CARD
+========================== */
+
+.valentine-card {
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:rgb(222, 212, 212);
+
+}
+
+
+/* Main Border */
+
+.love-border {
+
+    width:85%;
+
+    padding:40px;
+
+
+    border:3px solid #d77799;
+
+    border-radius:30px;
+
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(224, 15, 15, 0.35),
+        rgba(16, 15, 15, 0.35)
+    );
+
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+    0 0 30px rgba(255,0,100,0.5);
+
+}
+
+
+/* Heart Icon */
+
+.heart-icon {
+
+    font-size:55px;
+
+    animation:pulse 1.5s infinite;
+
+}
+
+
+@keyframes pulse {
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+
+
+/* Title */
+
+.occasion {
+
+    font-size:42px;
+
+    margin:15px 0;
+
+    color:#ffd1e6;
+
+    font-weight:700;
+
+}
+
+
+
+/* Couple Names */
+
+.couple-name {
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin:25px 0;
+
+}
+
+
+.person {
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    color:white;
+
+}
+
+
+
+.big-heart {
+
+    font-size:45px;
+
+    color:#ff1744;
+
+}
+
+
+
+/* Message */
+
+.love-message {
+
+    font-size:22px;
+
+    line-height:1.7;
+
+    margin:25px auto;
+
+    max-width:500px;
+
+    color:#ffe6f0;
+
+}
+
+
+
+/* Footer */
+
+.love-footer {
+
+    font-size:20px;
+
+    color:#ffc0cb;
+
+}
+
+
+/* Divider */
+
+.divider {
+
+    width:120px;
+
+    height:3px;
+
+    background:#ff80ab;
+
+    margin:20px auto;
+
+}
+  /* ===============================
+   BUSINESS CARD
+================================ */
+
+.business-frame{
+
+    width:80%;
+    max-width:420px;
+
+    padding:22px;
+
+    border-radius:22px;
+
+    background:rgba(15,23,42,.55);
+
+    backdrop-filter:blur(12px);
+
+    border:2px solid rgba(255,255,255,.18);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.45);
+
+}
+
+/* Name */
+
+.business-name{
+
+    font-size:clamp(26px,4vw,36px);
+
+    font-weight:800;
+
+    text-align:center;
+
+    color:#fff;
+
+    line-height:1.1;
+
+    margin-bottom:6px;
+
+    text-transform:uppercase;
+
+    word-break:break-word;
+
+}
+
+/* Job */
+
+.job-title{
+
+    text-align:center;
+
+    color:#FFD54F;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    margin-bottom:18px;
+
+}
+
+/* Divider */
+
+.divider{
+
+    width:70px;
+
+    height:3px;
+
+    margin:0 auto 20px;
+
+    border-radius:20px;
+
+    background:linear-gradient(90deg,#FFD54F,#F59E0B);
+
+}
+
+/* Details */
+
+.business-details{
+
+    display:flex;
+
+    text-align : center;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+/* Row */
+
+.detail-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-align: center;
+
+    padding:12px 14px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:16px;
+
+    line-height:1.4;
+
+    word-break:break-word;
+
+}
+
+/* Icon */
+
+.detail-row span:first-child{
+
+    width:30px;
+
+    font-size:22px;
+
+    text-align:center;
+
+    flex-shrink:0;
+
+}
+
+/* Responsive */
+
+@media(max-width:600px){
+
+.business-frame{
+
+    width:92%;
+
+    padding:18px;
+
+}
+
+.business-name{
+
+    font-size:26px;
+
+}
+
+.job-title{
+
+    font-size:18px;
+
+}
+
+.detail-row{
+
+    font-size:14px;
+
+    padding:10px 12px;
+
+}
+
+}
+
+.poster-card{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+    height:100%;
+}
+
+.poster-frame{
+
+    width:85%;
+    max-width:450px;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(0,0,0,.35);
+
+    backdrop-filter:blur(10px);
+
+    border:3px solid #FFD700;
+
+    box-shadow:
+        0 0 25px rgba(255,215,0,.35);
+
+    text-align:center;
+
+}
+
+.poster-badge{
+
+    display:inline-block;
+
+    padding:8px 20px;
+
+    background:#FFD700;
+
+    color:#000;
+
+    font-weight:700;
+
+    border-radius:50px;
+
+    margin-bottom:20px;
+
+}
+
+.poster-title{
+
+    font-size:40px;
+
+    color:white;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+
+}
+
+.poster-offer{
+
+    font-size:50px;
+
+    color:#ff4d4d;
+
+    font-weight:900;
+
+    margin-bottom:20px;
+
+    text-shadow:0 0 15px rgba(255,0,0,.5);
+
+}
+
+.poster-divider{
+
+    width:80px;
+
+    height:4px;
+
+    background:#FFD700;
+
+    margin:20px auto;
+
+    border-radius:20px;
+
+}
+
+.poster-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.poster-row{
+
+    padding:12px 18px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+/* ===============================
+   BIRTHDAY CARD
+================================ */
+
+.birthday-card{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+    height:100%;
+}
+
+.birthday-frame{
+
+    width:90%;
+    max-width:500px;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(12px);
+
+    border:3px solid rgba(255,255,255,.25);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
+
+    text-align:center;
+
+}
+
+.birthday-badge{
+
+    display:inline-block;
+
+    padding:10px 25px;
+
+    background:linear-gradient(90deg,#ff7b00,#ff006e);
+
+    color:white;
+
+    border-radius:40px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+.birthday-name{
+
+    font-size:42px;
+
+    color:#fff;
+
+    font-weight:800;
+
+    margin-bottom:25px;
+
+    text-shadow:0 3px 10px rgba(0,0,0,.5);
+
+}
+
+.age-circle{
+
+    width:120px;
+
+    height:120px;
+
+    margin:0 auto 25px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#FFD700,#ff9800);
+
+    color:#111;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 0 20px rgba(255,215,0,.45);
+
+}
+
+.age-circle span{
+
+    font-size:40px;
+
+    font-weight:800;
+
+}
+
+.age-circle small{
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+
+.birthday-divider{
+
+    width:100px;
+
+    height:4px;
+
+    background:#FFD700;
+
+    margin:25px auto;
+
+    border-radius:20px;
+
+}
+
+.birthday-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.birthday-row{
+
+    padding:14px;
+
+    background:rgba(255,255,255,.10);
+
+    border-radius:12px;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+.birthday-footer{
+
+    margin-top:30px;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:#FFD700;
+
+    text-shadow:0 2px 8px rgba(0,0,0,.5);
+
+}
+
+.wedding-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  border:3px solid rgba(255,255,255,.25);
+
+}
+
+.card-border {
+  padding: 30px;
+  border-radius: 20px;
+  
+  
+}
+
+.card-title {
+  font-size: 34px;
+  color: #f8f5f5;
+  margin-bottom: 20px;
+}
+
+.bride-name,
+.groom-name {
+  font-size: 42px;
+  font-weight: bold;
+  color: #fff;
+  margin: 10px 0;
+}
+
+.ampersand {
+  font-size: 28px;
+  color: rgb(223, 211, 144);
+  margin: 8px 0;
+}
+
+.venue,
+.datetime {
+  font-size: 20px;
+  color: #fff;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.flourish {
+  width: 120px;
+  height: 2px;
+  background: gold;
+  margin: 20px auto;
+}
+
+/* Baby Shower Card */
+
+.baby-card {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: #fff;
+}
+
+.card-border {
+  width: 85%;
+  padding: 30px;
+
+  border: 3px solid rgba(255,255,255,0.8);
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+}
+
+.baby-title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.parent-name {
+  font-size: 34px;
+  margin: 15px 0;
+  color: #ffe4f2;
+}
+
+.baby-gender,
+.baby-venue,
+.baby-date,
+.baby-time {
+  font-size: 20px;
+  margin: 12px 0;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.divider {
+  width: 120px;
+  height: 2px;
+  background: #fff;
+  margin: 20px auto;
+}
+
+/* ==========================
+   FESTIVAL CARD
+========================== */
+
+.festival-card {
+
+  width:100%;
+  height:100%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+
+  color:white;
+
+}
+
+
+.festival-card .card-border {
+
+  width:85%;
+
+  padding:35px;
+
+  border:3px solid rgba(255,215,0,0.8);
+
+  border-radius:25px;
+
+  background:
+  rgba(0,0,0,0.25);
+
+  backdrop-filter:blur(8px);
+
+}
+
+
+/* Icon */
+
+.festival-icon {
+
+  font-size:45px;
+
+  margin-bottom:15px;
+
+}
+
+
+/* Main Heading */
+
+.festival-title {
+
+  font-size:42px;
+
+  font-weight:700;
+
+  color:#ffd700;
+
+  margin:10px 0;
+
+}
+
+
+/* Festival Name */
+
+.festival-name {
+
+  font-size:32px;
+
+  color:#fff;
+
+  margin:15px 0;
+
+}
+
+
+/* Message */
+
+.festival-message {
+
+  font-size:22px;
+
+  line-height:1.7;
+
+  margin:25px auto;
+
+  max-width:500px;
+
+  color:#fff;
+
+}
+
+
+/* Sender */
+
+.festival-sender {
+
+  font-size:24px;
+
+  color:#ffe4a3;
+
+  margin-top:25px;
+
+}
+
+
+/* Divider */
+
+.divider {
+
+  width:120px;
+
+  height:3px;
+
+  background:#ffd700;
+
+  margin:20px auto;
+
+}

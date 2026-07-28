@@ -63,7 +63,7 @@ app.use(morgan("dev"));
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: process.env.CLIENT_URL || "https://ai-design-studio-m-sigma.vercel.app",
     credentials: true,
   })
 );

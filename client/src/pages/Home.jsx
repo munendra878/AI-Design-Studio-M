@@ -3,7 +3,7 @@ import Hero from "../components/Hero";
 import Categories from "../components/Categories";
 import Features from "../components/Features";
 import Footer from "../components/Footer";
-import FAQ   from    "../components/FaQ";
+import FAQ   from    "../components/FAQ";
 import Howitworks from  "../components/HowItWorks";
 import CTA from "../components/CTA";
 import Testimonials from "../components/Testimonials";

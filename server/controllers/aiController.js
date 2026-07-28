@@ -590,18 +590,12 @@ const result = await ollama.chat({
 
 } catch (error) {
 
-
   console.error("Ollama Error:", error);
 
-
   return res.status(500).json({
-
     success: false,
-
-    message: "Prompt generation failed",
-
+    message: error.message || "Prompt generation failed"
   });
-
 
 }
 }

@@ -60,6 +60,7 @@ app.use(morgan("dev"));
 // ==========================
 // CORS
 // ==========================
+// Dynamic Vercel origin matching + localhost
 const allowedOrigins = [
   "http://localhost:5173",
   "https://ai-design-studio-m-sigma.vercel.app"
@@ -68,18 +69,23 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, callback) => {
+      // Allow requests with no origin (like mobile apps, curl, or server-to-server)
+      if (!origin) return callback(null, true);
 
-      if (!origin || allowedOrigins.includes(origin)) {
+      // Match explicit allowed origins OR any vercel.app preview URL
+      const isAllowed = 
+        allowedOrigins.includes(origin) || 
+        /\.vercel\.app$/.test(origin);
+
+      if (isAllowed) {
         callback(null, true);
       } else {
         callback(new Error("Blocked by CORS"));
       }
-
     },
-    credentials: true
+    credentials: true,
   })
 );
-
 
 // ==========================
 // Rate Limiter (AI APIs)

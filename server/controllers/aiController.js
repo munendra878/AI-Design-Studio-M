@@ -589,14 +589,15 @@ const result = await ollama.chat({
 
 
 } catch (error) {
-
-  console.error("Ollama Error:", error.message);
+  console.error("========== ERROR ==========");
+  console.error(error);
+  console.error(error.message);
+  console.error(error.stack);
 
   return res.status(500).json({
     success: false,
     message: error.message,
   });
-
 }
 }
  // ==============================

@@ -1,4 +1,4 @@
-import ollama from "../config/ollama.js";
+import groq from "../config/groq.js";
 // ==============================
 // Generate Enhanced Prompt
 // ==============================
@@ -544,48 +544,32 @@ Rules:
 - The prompt must be suitable for FLUX or Stable Diffusion.
 
 Return only the final prompt.
-`;
- const limitedUserPrompt = userPrompt.substring(0, 2000);
+`;const limitedUserPrompt = userPrompt.substring(0, 2000);
 
-const result = await ollama.chat({
-
-  model: "llama3.2:latest",
-
+const result = await groq.chat.completions.create({
+  model: "llama-3.3-70b-versatile",
   messages: [
-
+    {
+      role: "system",
+      content:
+        "You are an expert prompt engineer. Create detailed prompts for AI image generation.",
+    },
     {
       role: "user",
-
       content: limitedUserPrompt,
-
-    }
-
+    },
   ],
-
-
-  options: {
-
-    num_predict: 200,
-
-    temperature: 0.7,
-
-  }
-
+  temperature: 0.7,
+  max_tokens: 300,
 });
 
+const enhancedPrompt =
+  result.choices[0].message.content.trim(),
 
- const enhancedPrompt = result.message.content
-  .trim()
-  .substring(0, 800);   // Final response character limit
-
-
-  return res.status(200).json({
-
-    success: true,
-
-    enhancedPrompt,
-
-  });
+ return res.status(200).json({
+  success: true,
+  enhancedPrompt,
+});
 
 
 } catch (error) {

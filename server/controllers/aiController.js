@@ -549,7 +549,7 @@ Return only the final prompt.
 const limitedUserPrompt = userPrompt.substring(0, 2000);
 
 const result = await groq.chat.completions.create({
-  model: "llama-3.3-70b-versatile",
+  model: "llama-3.3-8b-instan",
   messages: [
     {
       role: "system",

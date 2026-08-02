@@ -544,7 +544,9 @@ Rules:
 - The prompt must be suitable for FLUX or Stable Diffusion.
 
 Return only the final prompt.
-`;const limitedUserPrompt = userPrompt.substring(0, 2000);
+`; 
+
+const limitedUserPrompt = userPrompt.substring(0, 2000);
 
 const result = await groq.chat.completions.create({
   model: "llama-3.3-70b-versatile",
@@ -563,14 +565,12 @@ const result = await groq.chat.completions.create({
   max_tokens: 300,
 });
 
-const enhancedPrompt =
-  result.choices[0].message.content.trim(),
+const enhancedPrompt = result.choices[0].message.content.trim();
 
- return res.status(200).json({
+return res.status(200).json({
   success: true,
   enhancedPrompt,
 });
-
 
 } catch (error) {
   console.error("========== ERROR ==========");

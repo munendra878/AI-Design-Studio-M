@@ -547,7 +547,10 @@ Return only the final prompt.
 `; 
 
 const limitedUserPrompt = userPrompt.substring(0, 2000);
-
+    
+console.log("➡️ Starting Groq request...");
+console.time("Groq Request");
+    
 const result = await groq.chat.completions.create({
   model: "llama-3.3-8b-instan",
   messages: [
@@ -564,7 +567,9 @@ const result = await groq.chat.completions.create({
   temperature: 0.7,
   max_tokens: 300,
 });
-
+console.timeEnd("Groq Request");
+console.log("✅ Groq request completed");
+    
 const enhancedPrompt = result.choices[0].message.content.trim();
 
 return res.status(200).json({
@@ -587,6 +592,8 @@ return res.status(200).json({
  // ==============================
 // Generate AI Image
 // ==============================
+
+
 export const generateImage = async (req, res) => {
 
   try {

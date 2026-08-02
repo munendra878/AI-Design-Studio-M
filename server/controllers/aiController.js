@@ -552,7 +552,7 @@ console.log("➡️ Starting Groq request...");
 console.time("Groq Request");
     
 const result = await groq.chat.completions.create({
-  model: "llama-3.3-8b-instan",
+  model: "llama-3.3-8b-instant",
   messages: [
     {
       role: "system",

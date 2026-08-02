@@ -1,31 +1,37 @@
 #!/bin/sh
 
+set -e
+
 export OLLAMA_HOST=0.0.0.0:11434
 
-# 1. Start Ollama in the background
+echo "🚀 Starting Ollama..."
+
+# Start Ollama in background
 ollama serve &
 SERVER_PID=$!
 
-# 2. Dynamically wait for Ollama to be ready (up to 30s)
-echo "⏳ Waiting for Ollama server to start..."
-MAX_RETRIES=30
-RETRY_COUNT=0
+echo "⏳ Waiting for Ollama server to become ready..."
 
-while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
-  if curl -s http://127.0.0.1:11434/ > /dev/null; then
-    echo "✅ Ollama is up and running!"
-    break
-  fi
-  RETRY_COUNT=$((RETRY_COUNT + 1))
-  sleep 1
+# Wait until the API is available
+until curl -s http://127.0.0.1:11434/api/tags >/dev/null 2>&1
+do
+    sleep 2
 done
 
-# 3. Pull model if it's not already cached on volume
-echo "📦 Pulling model llama3.2..."
-ollama pull llama3.2 || echo "⚠️ Model pull failed or timed out, continuing startup..."
+echo "✅ Ollama server is ready."
 
-# 4. Graceful shutdown handler for Render SIGTERM/SIGINT
-trap 'echo "Stopping Ollama..."; kill -TERM $SERVER_PID; wait $SERVER_PID' INT TERM
+# Pull model only if it doesn't exist
+if ! ollama list | grep -q "llama3.2"; then
+    echo "📦 Pulling llama3.2 model..."
+    ollama pull llama3.2
+else
+    echo "✅ llama3.2 already exists."
+fi
 
-# 5. Keep script running alongside the background server
+echo "🎉 Ollama is ready."
+
+# Graceful shutdown
+trap "echo 'Stopping Ollama...'; kill -TERM $SERVER_PID; wait $SERVER_PID" INT TERM
+
+# Keep container alive
 wait $SERVER_PID

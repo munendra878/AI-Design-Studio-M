@@ -549,7 +549,7 @@ Return only the final prompt.
 
 const result = await ollama.chat({
 
-  model: "llama3.2",
+  model: "llama3.2:latest",
 
   messages: [
 

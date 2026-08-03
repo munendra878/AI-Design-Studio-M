@@ -56,7 +56,7 @@ if (!user) {
     saveUsed: 0,
 
   });
-  
+
 }
 
     // Reset daily counters if it's a new day
@@ -157,36 +157,45 @@ export const getDesigns = async(req,res)=>{
     }
 
 };
-
-
-
-
-// ============================
-// Get User Designs
-// ============================
 export const getUserDesigns = async (req, res) => {
+  console.log("➡️ getUserDesigns called");
+
   try {
     const { userId } = req.params;
 
-    const designs = await Design.find({
-      clerkId: userId,
-    })
+    console.log("User ID:", userId);
+
+    const start = Date.now();
+
+    const designs = await Design.find({ clerkId: userId })
       .sort({ createdAt: -1 })
-      .limit(100);
+      .lean()
+      .limit(100)
+      .maxTimeMS(10000);
+
+    console.log("Query finished in", Date.now() - start, "ms");
+    console.log("Found", designs.length, "designs");
 
     return res.status(200).json({
       success: true,
       designs,
     });
   } catch (error) {
-    console.error("Fetch User Designs Error:", error);
+    console.error("❌ getUserDesigns Error:", error);
 
     return res.status(500).json({
       success: false,
-      message: "Failed to fetch user designs",
+      message: error.message,
     });
   }
 };
+
+
+
+// ============================
+// Get User Designs
+// ============================
+
 
 
 

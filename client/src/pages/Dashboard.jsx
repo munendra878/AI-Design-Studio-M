@@ -32,21 +32,25 @@ export default function Dashboard() {
   }, [isLoaded, user]);
 
   const fetchDesigns = async () => {
-    try {
-      setLoading(true);
+  try {
+    setLoading(true);
 
-      const res = await aiService.getUserDesigns(user.id);
+    console.log("Fetching designs for:", user.id);
 
-      if (res.data.success) {
-        setDesigns(res.data.designs || []);
-      }
-    } catch (err) {
-      console.error("Dashboard Error:", err);
-      setDesigns([]);
-    } finally {
-      setLoading(false);
+    const res = await aiService.getUserDesigns(user.id);
+
+    console.log("Response:", res.data);
+
+    if (res.data.success) {
+      setDesigns(res.data.designs || []);
     }
-  };
+  } catch (err) {
+    console.error("Dashboard Error:", err);
+    setDesigns([]);
+  } finally {
+    setLoading(false);
+  }
+};
 
   if (!isLoaded) {
     return (

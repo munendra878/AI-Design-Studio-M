@@ -39,32 +39,24 @@ export const saveDesign = async (req, res) => {
     // Find user
     let user = await User.findOne({ clerkId });
 
-
 if (!user) {
-
 
   user = await User.create({
 
     clerkId,
 
-
     name:
       req.body.name || "Unknown User",
 
-
     email:
-      req.body.email || "unknown@email.com",
+      req.body.email || `${clerkId}@placeholder.local`,
 
+    totalDesigns: 0,
 
-    totalDesigns:0,
-
-
-    saveUsed:0,
-
+    saveUsed: 0,
 
   });
-
-
+  
 }
 
     // Reset daily counters if it's a new day

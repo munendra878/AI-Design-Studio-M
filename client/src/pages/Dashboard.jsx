@@ -31,7 +31,7 @@ export default function Dashboard() {
     }
   }, [isLoaded, user]);
 
-  const fetchDesigns = async () => {
+const fetchDesigns = async () => {
   try {
     setLoading(true);
 
@@ -39,13 +39,18 @@ export default function Dashboard() {
 
     const res = await aiService.getUserDesigns(user.id);
 
-    console.log("Response:", res.data);
+    console.log("Full Response:", res);
+    console.log("Response Data:", res.data);
+    console.log("Designs:", res.data.designs);
 
     if (res.data.success) {
       setDesigns(res.data.designs || []);
     }
   } catch (err) {
     console.error("Dashboard Error:", err);
+    console.error("Error Response:", err.response);
+    console.error("Error Message:", err.message);
+
     setDesigns([]);
   } finally {
     setLoading(false);
